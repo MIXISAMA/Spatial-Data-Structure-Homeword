@@ -1,0 +1,31 @@
+clang++ subsample.cpp           -std=c++17 -o sub -lgflags
+clang++ gaussian_blur.cpp       -std=c++17 -o gb  -lgflags
+clang++ difference.cpp          -std=c++17 -o df  -lgflags
+clang++ segmentation_robust.cpp -std=c++17 -o sr  -lgflags
+clang++ combine.cpp             -std=c++17 -o cb  -lgflags 
+
+./sub -i ./lianpu_1/lianpu_1.jpg -o ./lianpu_1/lianpu_1_sub.jpg -s 5
+./gb -i ./lianpu_1/lianpu_1_sub.jpg -o ./lianpu_1/lianpu_1_gb_3x3.jpg
+./gb -i ./lianpu_1/lianpu_1_sub.jpg -o ./lianpu_1/lianpu_1_gb_5x5.jpg -5x5
+./df -i3 ./lianpu_1/lianpu_1_gb_3x3.jpg -i5 ./lianpu_1/lianpu_1_gb_5x5.jpg -o ./lianpu_1/lianpu_1_df.jpg
+./sr -i ./lianpu_1/lianpu_1_sub.jpg -f ./lianpu_1/lianpu_1_df.jpg -d ./lianpu_1/sr/ -acc 50 -eff 0.2 -score 0.01 -mp 0.01
+
+./sub -i ./lianpu_2/lianpu_2.jpg -o ./lianpu_2/lianpu_2_sub.jpg -s 5
+./gb -i ./lianpu_2/lianpu_2_sub.jpg -o ./lianpu_2/lianpu_2_gb_3x3.jpg
+./gb -i ./lianpu_2/lianpu_2_sub.jpg -o ./lianpu_2/lianpu_2_gb_5x5.jpg -5x5
+./df -i3 ./lianpu_2/lianpu_2_gb_3x3.jpg -i5 ./lianpu_2/lianpu_2_gb_5x5.jpg -o ./lianpu_2/lianpu_2_df.jpg
+./sr -i ./lianpu_2/lianpu_2_sub.jpg -f ./lianpu_2/lianpu_2_df.jpg -d ./lianpu_2/sr/ -acc 55 -eff 0.8 -score 0.01 -mp 0.01
+
+./sub -i ./lianpu_3/lianpu_3.jpg -o ./lianpu_3/lianpu_3_sub.jpg -s 5
+./gb -i ./lianpu_3/lianpu_3_sub.jpg -o ./lianpu_3/lianpu_3_gb_3x3.jpg
+./gb -i ./lianpu_3/lianpu_3_sub.jpg -o ./lianpu_3/lianpu_3_gb_5x5.jpg -5x5
+./df -i3 ./lianpu_3/lianpu_3_gb_3x3.jpg -i5 ./lianpu_3/lianpu_3_gb_5x5.jpg -o ./lianpu_3/lianpu_3_df.jpg
+./sr -i ./lianpu_3/lianpu_3_sub.jpg -f ./lianpu_3/lianpu_3_df.jpg -d ./lianpu_3/sr/ -acc 55 -eff 0.8 -score 0.01 -mp 0.01
+
+./sub -i ./lianpu_4/lianpu_4.jpg -o ./lianpu_4/lianpu_4_sub.jpg -s 5
+./gb -i ./lianpu_4/lianpu_4_sub.jpg -o ./lianpu_4/lianpu_4_gb_3x3.jpg
+./gb -i ./lianpu_4/lianpu_4_sub.jpg -o ./lianpu_4/lianpu_4_gb_5x5.jpg -5x5
+./df -i3 ./lianpu_4/lianpu_4_gb_3x3.jpg -i5 ./lianpu_4/lianpu_4_gb_5x5.jpg -o ./lianpu_4/lianpu_4_df.jpg
+./sr -i ./lianpu_4/lianpu_4_sub.jpg -f ./lianpu_4/lianpu_4_df.jpg -d ./lianpu_4/sr/ -acc 55 -eff 0.8 -score 0.01 -mp 0.01
+
+./cb -p ./path.txt -o ./combine.png
