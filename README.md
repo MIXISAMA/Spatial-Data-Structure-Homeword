@@ -4,13 +4,22 @@
 
 ## 效果
 
-..Todo
+分割效果
+
+![1](https://raw.github.com/MIXISAMA/Spatial-Data-Structure-Homeword/master/lianpu_4/sr/lianpu_4_sub_1.png)
+![2](https://raw.github.com/MIXISAMA/Spatial-Data-Structure-Homeword/master/lianpu_4/sr/lianpu_4_sub_2.png)
+![3](https://raw.github.com/MIXISAMA/Spatial-Data-Structure-Homeword/master/lianpu_4/sr/lianpu_4_sub_3.png)
+![4](https://raw.github.com/MIXISAMA/Spatial-Data-Structure-Homeword/master/lianpu_4/sr/lianpu_4_sub_4.png)
+
+拼接效果
+
+![combine](https://raw.github.com/MIXISAMA/Spatial-Data-Structure-Homeword/master/combine.png)
 
 ## 依赖
 
 * c++17
-* gflags
-* stb_image
+* [gflags](https://github.com/gflags/gflags)
+* [stb_image](https://github.com/nothings/stb)
 
 您需要手动把`stb_image.h`和`stb_image_write.h`放到根目录。
 
